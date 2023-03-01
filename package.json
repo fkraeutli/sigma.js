@@ -8,6 +8,7 @@
   "scripts": {
     "build": "webpack --progress && webpack --progress --mode production",
     "clean": "rimraf $npm_package_config_clean",
+    "install": "npm run build",
     "transpile": "tsc -p ./tsconfig.transpile.json -d && replace '\\.glsl' '.glsl.js' rendering -r && webpack --config ./webpack.programs.config.js",
     "lint": "eslint $npm_package_config_folders --ext .ts",
     "postpublish": "npm run clean",
@@ -34,7 +35,6 @@
     "clean": "build core rendering utils index.js index.d.ts index-bundle.js index-bundle.d.ts settings.js settings.d.ts sigma.js sigma.d.ts types.js types.d.ts",
     "folders": "examples src test"
   },
-  "install": "npm run build",
   "repository": {
     "type": "git",
     "url": "http://github.com/jacomyal/sigma.js.git"
